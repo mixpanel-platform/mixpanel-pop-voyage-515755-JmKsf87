@@ -26,7 +26,6 @@
       MP.api.ready(runReport);
       function runReport() {
         var eventSelector = $('#eventSelect').MPEventSelect();
-        var propSelector  = $('#propSelect').MPPropertySelect();
         var dateSelector  = $('#dateSelect').MPDatepicker();
         var eventGraph    = $('#graph').MPChart({chartType: 'line'});
         var eventTable    = $('#table').MPTable({
