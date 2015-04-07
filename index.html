@@ -56,6 +56,11 @@
             
               _.each(_.keys(query), function(key){
                 console.log(query[key]);
+                var level = query[key]
+                _.each(_.keys(level), function(keyProp){
+                  console.log(level[keyProp])
+                });
+                
               });
               
               
