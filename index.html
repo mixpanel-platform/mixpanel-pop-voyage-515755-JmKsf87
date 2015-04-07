@@ -37,6 +37,12 @@
               eventTable.MPTable('setData', results);
             });
           }
+          
+          if (propName) {
+            console.log(propName)
+          }
+                  
+            
         };
         eventSelect.on('change', function(e, eventName) {
           propSelect.MPPropertySelect('setEvent', eventName);
