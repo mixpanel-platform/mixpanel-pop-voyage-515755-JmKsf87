@@ -63,8 +63,8 @@
                   var sum = 0;
                   _.each(_.keys(property), function(dates){
                     sum = sum + property[dates]
+                    delete property[dates]
                   });
-                  property = sum
                 });
               });
               
