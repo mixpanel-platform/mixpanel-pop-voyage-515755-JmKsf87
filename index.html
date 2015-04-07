@@ -48,7 +48,7 @@
               'event': eventName,
             }
             var query = MP.api.query(endpoint, params).done(function(results) {
-              console.log(results);
+              console.log(results["data"]["values"]);
             });
           };
         };
