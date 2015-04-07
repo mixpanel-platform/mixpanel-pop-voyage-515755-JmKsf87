@@ -47,8 +47,9 @@
               'outer': 'properties["PlayerCurrentLevel"]',
               'event': eventName,
             }
-            var query = MP.api.query(endpoint, params);
-            console.log(query)
+            var query = MP.api.query(endpoint, params).done(function(results) {
+              console.log(results.values());
+            };
           };
         };
         
