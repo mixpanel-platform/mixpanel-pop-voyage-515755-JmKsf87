@@ -41,6 +41,35 @@
           if (propName) {
             console.log("properties[" + propName + "]")
             console.log("'properties[" + propName + "]'")
+            console.log('properties["PlayerCurrentLevel"]')
+            var endpoint = '/api/2.0/segmentation/multiseg';
+            var params = {
+              'type': 'general',
+              'inner': "'properties[" + propName + "]'"
+              'outer': 'properties["PlayerCurrentLevel"]',
+              'event': event,
+              'to': moment(),
+              'from': moment().subtract(10, 'days')
+        }
+        var query = MP.api.query('/api/2.0/segmentation/multiseg', params);
+        
+        var graphData = function(data){
+          
+          
+          
+          
+        }
+        
+        $.when(query).done(function(obj){
+            console.log(obj);
+            var series = obj.data.series;
+            var data = obj.data.values;
+            
+            _.each(_.keys(data), function(key){
+                console.log(data[key]);
+            });
+            
+        });
           }
                   
             
