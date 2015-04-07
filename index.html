@@ -40,8 +40,6 @@
           
           if (propName) {
             console.log('properties["' + propName + '"]')
-            console.log('properties["PlayerCurrentLevel"]')
-            console.log(eventName)
             var endpoint = '/api/2.0/segmentation/multiseg';
             var params = {
               'type': 'general',
@@ -49,9 +47,11 @@
               'outer': 'properties["PlayerCurrentLevel"]',
               'event': eventName,
             }
-            
+            var query = MP.api.query(endpoint, params);
+            console.log(query)
           };
         };
+        
         eventSelect.on('change', function(e, eventName) {
           propSelect.MPPropertySelect('setEvent', eventName);
           $("#by").show();
