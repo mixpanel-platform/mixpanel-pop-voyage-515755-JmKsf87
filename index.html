@@ -43,17 +43,7 @@
             console.log("'properties[" + propName + "]'")
             console.log('properties["PlayerCurrentLevel"]')
             var endpoint = '/api/2.0/segmentation/multiseg';
-            var params = {
-              'type': 'general',
-              'inner': "'properties[" + propName + "]'"
-              'outer': 'properties["PlayerCurrentLevel"]',
-              'event': event,
-              'to': moment(),
-              'from': moment().subtract(10, 'days')
-            }
-        
-            
-        };
+          };
         eventSelect.on('change', function(e, eventName) {
           propSelect.MPPropertySelect('setEvent', eventName);
           $("#by").show();
