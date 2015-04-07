@@ -41,7 +41,15 @@
           if (propName) {
             console.log('properties["' + propName + '"]')
             console.log('properties["PlayerCurrentLevel"]')
+            console.log(eventName)
             var endpoint = '/api/2.0/segmentation/multiseg';
+            var params = {
+              'type': 'general',
+              'inner': "'properties[" + propName + "]'"
+              'outer': 'properties["PlayerCurrentLevel"]',
+              'event': eventName,
+            }
+            
           };
         };
         eventSelect.on('change', function(e, eventName) {
