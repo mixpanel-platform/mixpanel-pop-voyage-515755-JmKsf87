@@ -40,7 +40,6 @@
           }
           
           if (propName) {
-            console.log('properties["' + propName + '"]')
             var endpoint = '/api/2.0/segmentation/multiseg';
             var params = {
               'type': 'general',
@@ -55,9 +54,9 @@
               //var series = obj.data.series;
               //var data = obj.data.values;
             
-              //_.each(_.keys(data), function(key){
-              //  console.log(data[key]);
-              //});
+              _.each(_.keys(query), function(key){
+                console.log(query[key]);
+              });
               
               
               eventGraph.MPChart('setData', query);            
