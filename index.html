@@ -54,11 +54,18 @@
               //var series = obj.data.series;
               //var data = obj.data.values;
             
-              _.each(_.keys(query), function(key){
-                //console.log(query[key]);
-                var level = query[key]
-                _.each(_.keys(level), function(keyProp){
-                  console.log(level[keyProp])
+              _.each(_.keys(query), function(levels){
+                //console.log(query[levels]);
+                var level = query[levels]
+                _.each(_.keys(level), function(properties){
+                  //console.log(level[properties])
+                  var property = level[properties]
+                  var sum = 0;
+                  _.each(_.keys(property), function(dates){
+                    console.log(property[dates])
+                    var date = property[dates]
+                  });
+                    
                 });
                 
               });
@@ -67,6 +74,15 @@
               eventGraph.MPChart('setData', query);            
             });
           };
+          
+          function calculateSums(data, dateSeries, apiResults) {
+            var sum = 0;
+            dateSeries.forEach(function(date) {
+              sum = sum + apiResults.json[selectedEvent][date];
+              chartData[selectedEvent][date] = sum;
+            });
+          }
+          
         };
         
         eventSelect.on('change', function(e, eventName) {
