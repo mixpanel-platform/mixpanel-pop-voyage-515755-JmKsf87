@@ -39,7 +39,7 @@
           var chartData = {};
           chartData[selectedEvent] = {};
           
-          MP.api.segment(selectedEvent, undefined, dateRange).done(function(results) {
+          MP.api.segment(selectedEvent, 'PlayerCurrentLevel', dateRange).done(function(results) {
             // Need a sorted date Array in order to calculate a rolling sum
             var dateSeries = generateSortedDateSeries(results.json[selectedEvent]);
 
