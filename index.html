@@ -26,6 +26,7 @@
       MP.api.ready(runReport);
       function runReport() {
         var eventSelector = $('#eventSelect').MPEventSelect();
+        var propSelector  = $('#propSelect').MPPropertySelect();
         var dateSelector  = $('#dateSelect').MPDatepicker();
         var eventGraph    = $('#graph').MPChart({chartType: 'line'});
         var eventTable    = $('#table').MPTable({
@@ -39,8 +40,8 @@
           var chartData = {};
           chartData[selectedEvent] = {};
           
-          MP.api.segment(selectedEvent, 'PlayerCurrentLevel', dateRange).done(function(results) {
-            console.log(results.values());
+          MP.api.segment(selectedEvent, undefined, dateRange).done(function(results) {
+            // Need a sorted date Array in order to calculate a rolling sum
             var dateSeries = generateSortedDateSeries(results.json[selectedEvent]);
 
             calculateSums(chartData, dateSeries, results);
