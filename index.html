@@ -71,19 +71,9 @@
               
               console.log(query)
               
-              
-              eventGraph.MPChart('setData', query);            
+              eventStackedGraph.MPChart('setData', query);            
             });
           };
-          
-          function calculateSums(data, dateSeries, apiResults) {
-            var sum = 0;
-            dateSeries.forEach(function(date) {
-              sum = sum + apiResults.json[selectedEvent][date];
-              chartData[selectedEvent][date] = sum;
-            });
-          }
-          
         };
         
         eventSelect.on('change', function(e, eventName) {
