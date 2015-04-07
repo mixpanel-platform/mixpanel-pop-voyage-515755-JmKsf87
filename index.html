@@ -48,14 +48,14 @@
               'event': eventName,
             }
             MP.api.query(endpoint, params).done(function(results) {
-              console.log(results)
-              console.log(results["data"]["values"]);
+              //console.log(results)
+              //console.log(results["data"]["values"]);
               var query = results["data"]["values"]
               //var series = obj.data.series;
               //var data = obj.data.values;
             
               _.each(_.keys(query), function(key){
-                console.log(query[key]);
+                //console.log(query[key]);
                 var level = query[key]
                 _.each(_.keys(level), function(keyProp){
                   console.log(level[keyProp])
