@@ -50,12 +50,13 @@
             MP.api.query(endpoint, params).done(function(results) {
               //console.log(results)
               //console.log(results["data"]["values"]);
+              var output = {}
               var query = results["data"]["values"]
               //var series = obj.data.series;
               //var data = obj.data.values;
             
               _.each(_.keys(query), function(levels){
-                //console.log(query[levels]);
+                console.log(query[levels]);
                 var level = query[levels]
                 _.each(_.keys(level), function(properties){
                   //console.log(level[properties])
@@ -63,13 +64,14 @@
                   var sum = 0;
                   _.each(_.keys(property), function(dates){
                     sum = sum + property[dates]
-                    delete property[dates]
                   });
+                  //output[level][properties] = 
                   level[properties] = sum;
+                  debugger
                 });
               });
               
-              console.log(query)
+              //console.log(query)
               
               eventStackedGraph.MPChart('setData', query);            
             });
