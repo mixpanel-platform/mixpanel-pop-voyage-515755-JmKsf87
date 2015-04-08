@@ -33,13 +33,6 @@
           var eventName = eventSelect.MPEventSelect('value'),
               propName  = propSelect.MPPropertySelect('value'),
               dateRange = dateSelect.MPDatepicker('value');
-
-          if (eventName) {
-            MP.api.segment(eventName, 'PlayerCurrentLevel', dateRange).done(function(results) {
-              eventGraph.MPChart('setData', results);
-              eventTable.MPTable('setData', results);
-            });
-          }
           
           if (eventName && propName) {
             var endpoint = '/api/2.0/segmentation/multiseg';
@@ -73,7 +66,12 @@
               eventTable.MPTable('setData', output);
               
             });
-          };
+          } else if (eventName) {
+            MP.api.segment(eventName, 'PlayerCurrentLevel', dateRange).done(function(results) {
+              eventGraph.MPChart('setData', results);
+              eventTable.MPTable('setData', results);
+            });
+          }
         };
         
         eventSelect.on('change', function(e, eventName) {
