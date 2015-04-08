@@ -59,6 +59,7 @@
               'inner': 'properties[\"' + propName + '\"]',
               'outer': 'properties["PlayerCurrentLevel"]',
               'event': eventName,
+              'interval': getInterval(dates)
             });
             
             MP.api.query(endpoint, params).done(function(results) {
