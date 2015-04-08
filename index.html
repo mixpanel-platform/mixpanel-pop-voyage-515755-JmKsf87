@@ -58,6 +58,8 @@
               _.each(_.keys(query), function(levels){
                 console.log(query[levels]);
                 var level = query[levels]
+                output[level] = {}
+                debugger
                 _.each(_.keys(level), function(properties){
                   //console.log(level[properties])
                   var property = level[properties]
@@ -67,7 +69,7 @@
                   });
                   //output[level][properties] = 
                   level[properties] = sum;
-                  debugger
+                  //debugger
                 });
               });
               
