@@ -53,13 +53,13 @@
           
           if (eventName && propName) {
             var endpoint = '/api/2.0/segmentation/multiseg';
-            var dates = getDates()
+            var dates = getDates();
             var params =  $.extend({}, dates, {
               'type': 'general',
               'inner': 'properties[\"' + propName + '\"]',
               'outer': 'properties["PlayerCurrentLevel"]',
               'event': eventName,
-            }
+            });
             
             MP.api.query(endpoint, params).done(function(results) {
               var output = {}
