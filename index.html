@@ -56,10 +56,9 @@
               //var data = obj.data.values;
             
               _.each(_.keys(query), function(levels){
-                console.log(query[levels]);
+                //console.log(query[levels]);
                 var level = query[levels]
-                console.log(levels)
-                //output.query[levels] = {}
+                output[levels] = {}
                 debugger
                 _.each(_.keys(level), function(properties){
                   //console.log(level[properties])
