@@ -48,17 +48,11 @@
               'event': eventName,
             }
             MP.api.query(endpoint, params).done(function(results) {
-              //console.log(results)
-              //console.log(results["data"]["values"]);
               var output = {}
               var query = results["data"]["values"]
-              //var series = obj.data.series;
-              //var data = obj.data.values;
-            
+              
               _.each(_.keys(query), function(levels){
-                //console.log(query[levels]);
                 var level = query[levels]
-                //output[levels] = {}
                 _.each(_.keys(level), function(properties){
                   if (typeof output[properties] == 'undefined') {
                     output[properties] = {}
@@ -68,11 +62,8 @@
                   _.each(_.keys(property), function(dates){
                     sum = sum + property[dates]
                   });
-                  //output[levels][properties] = sum;
                   output[properties][levels] = sum;
-                  //debugger
                 });
-                //output
               });
               
               console.log(output)
