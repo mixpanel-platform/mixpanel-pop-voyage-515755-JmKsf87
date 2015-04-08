@@ -60,15 +60,15 @@
                 var level = query[levels]
                 //output[levels] = {}
                 _.each(_.keys(level), function(properties){
-                  //console.log(level[properties])
+                  output[properties]
                   var property = level[properties]
                   var sum = 0;
                   _.each(_.keys(property), function(dates){
                     sum = sum + property[dates]
                   });
-                  debugger
+                  //debugger
                   //output[levels][properties] = sum;
-                  output[properties][levels] = sum;
+                  //output[properties][levels] = sum;
                   //debugger
                 });
                 debugger;
