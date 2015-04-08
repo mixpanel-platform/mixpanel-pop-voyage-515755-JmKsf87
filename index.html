@@ -25,7 +25,8 @@
         var eventStackedGraph  = $('#mpchart').MPChart({chartType: 'bar', stacked: true});
         var eventTable  = $('#table').MPTable({
           showPercentages: false,
-          firstColHeader: 'Levels'
+          firstColHeader: 'Levels',
+          limit: 200
         });
 
         var runQuery = function() {
