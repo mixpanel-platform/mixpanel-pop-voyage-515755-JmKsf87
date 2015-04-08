@@ -66,12 +66,12 @@
               eventTable.MPTable('setData', output);
               
             });
-          } else if (eventName) {
-            MP.api.segment(eventName, 'PlayerCurrentLevel', dateRange).done(function(results) {
-              eventGraph.MPChart('setData', results);
-              eventTable.MPTable('setData', results);
-            });
-          }
+          } //else if (eventName) {
+            //MP.api.segment(eventName, 'PlayerCurrentLevel', dateRange).done(function(results) {
+            //  eventGraph.MPChart('setData', results);
+            //  eventTable.MPTable('setData', results);
+            //});
+          //}
         };
         
         eventSelect.on('change', function(e, eventName) {
