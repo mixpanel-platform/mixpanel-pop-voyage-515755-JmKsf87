@@ -28,6 +28,18 @@
           firstColHeader: 'Levels',
           limit: 200
         });
+        var options = {
+          items: [
+            {label: 'Total', value: 'general'},
+            {label: 'Unique', value: 'unique'},
+            {label: 'Average', value: 'average'}
+            ]
+        };
+        var dropdown = $('<div></div>').appendTo('body').MPSelect(options);     // Create the dropdown with your data
+          dropdown.on('change', function(e, selection) {                      // Do something when an option is selected
+            alert(selection);
+          });
+        });
         
         //convenience method for grabbing that datepicker value
         getDates = function() {
@@ -55,7 +67,7 @@
             var endpoint = '/api/2.0/segmentation/multiseg';
             var dates = getDates();
             var params =  $.extend({}, dates, {
-              'type': 'general',
+              'type': 'general' //typeSelect,
               'inner': 'properties[\"' + propName + '\"]',
               'outer': 'properties["PlayerCurrentLevel"]',
               'event': eventName,
