@@ -60,7 +60,9 @@
                 var level = query[levels]
                 //output[levels] = {}
                 _.each(_.keys(level), function(properties){
-                  output[properties]
+                  if (typeof output[properties] !== 'undefined') {
+                    output[properties] = {}
+                  }
                   var property = level[properties]
                   var sum = 0;
                   _.each(_.keys(property), function(dates){
@@ -68,10 +70,9 @@
                   });
                   //debugger
                   //output[levels][properties] = sum;
-                  //output[properties][levels] = sum;
+                  output[properties][levels] = sum;
                   //debugger
                 });
-                debugger;
                 //output
               });
               
