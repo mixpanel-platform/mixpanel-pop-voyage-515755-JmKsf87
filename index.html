@@ -68,11 +68,7 @@
               
               console.log(output)
               eventStackedGraph.MPChart('setData', output);  
-              $('<div></div>').appendTo('body').MPChart({
-                chartType: 'bar',
-                data: output,
-                stacked: true
-              });
+              
             });
           };
         };
