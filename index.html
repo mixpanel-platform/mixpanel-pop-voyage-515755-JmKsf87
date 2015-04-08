@@ -67,7 +67,7 @@
             var endpoint = '/api/2.0/segmentation/multiseg';
             var dates = getDates();
             var params =  $.extend({}, dates, {
-              'type': 'general', //typeSelect,
+              'type': typeName,
               'inner': 'properties[\"' + propName + '\"]',
               'outer': 'properties["PlayerCurrentLevel"]',
               'event': eventName,
