@@ -43,7 +43,7 @@
               'event': eventName,
             }
             
-            MP.api.query(endpoint, params).done(function(results) {
+            MP.api.query(endpoint, params, dateRange).done(function(results) {
               var output = {}
               var query = results["data"]["values"]
               
