@@ -59,7 +59,6 @@
                 //console.log(query[levels]);
                 var level = query[levels]
                 output[levels] = {}
-                debugger
                 _.each(_.keys(level), function(properties){
                   //console.log(level[properties])
                   var property = level[properties]
@@ -68,12 +67,12 @@
                     sum = sum + property[dates]
                   });
                   //output[level][properties] = 
-                  level[properties] = sum;
+                  output[properties][level] = sum;
                   //debugger
                 });
               });
               
-              //console.log(query)
+              console.log(output)
               
               eventStackedGraph.MPChart('setData', query);            
             });
