@@ -40,11 +40,6 @@
             {label: 'Average', value: 'average'}
             ]
         };
-        var dropdown = $('<div></div>').appendTo('body').MPSelect(options);     // Create the dropdown with your data
-          dropdown.on('change', function(e, selection) {                      // Do something when an option is selected
-            alert(selection);
-          });
-        });
         
         //convenience method for grabbing that datepicker value
         getDates = function() {
@@ -67,6 +62,11 @@
           var eventName = eventSelect.MPEventSelect('value'),
               propName  = propSelect.MPPropertySelect('value'),
               dateRange = dateSelect.MPDatepicker('value');
+          var dropdown = $('<div></div>').appendTo('body').MPSelect(options);     // Create the dropdown with your data
+            dropdown.on('change', function(e, selection) {                    // Do something when an option is selected
+            alert(selection);
+          });
+        });
           
           if (eventName && propName) {
             var endpoint = '/api/2.0/segmentation/multiseg';
