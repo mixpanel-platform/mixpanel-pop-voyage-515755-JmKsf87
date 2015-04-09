@@ -116,7 +116,10 @@
           $("#by").show();
           runQuery();
         });
-        propSelect.on('change', runQuery);
+        propSelect.on('change', function(e, eventName) {
+          $('#mpselect').show();
+          runQuery();
+        });
         dateSelect.on('change', runQuery);
         typeSelect.on('change', runQuery);
       });
